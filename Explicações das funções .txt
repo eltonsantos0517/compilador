@@ -1,0 +1,48 @@
+LDC k { Incrementa o topo, e joga o que tiver na constante k para o topo}
+LDV n {Incrementa o topo, pega o que tiver na posição n da pilha e joga para o topo}
+ADD {Soma o que tiver no topo, com o que tiver em topo-1..Armazena em topo-1. e decrementa o topo}
+SUB {Subtrai o que tiver no topo, com o que tiver em topo-1..Armazena em topo-1. e decrementa o topo}
+MULT {Multiplica o que tiver no topo, com o que tiver em topo-1..Armazena em topo-1. e decrementa o topo}
+DIVI {Divide o que tiver no topo, com o que tiver em topo-1..Armazena em topo-1. e decrementa o topo}
+INV {Inverte o sinal do conteudo do topo da pilha}
+AND {Se o topo-1 conter 1 E topo conter 1, então topo-1 = 1, caso contrario topo-1=0... decrementa o topo}
+OR {Se o topo-1 conter 1 OU topo conter 1, então topo-1 = 1, caso contrario topo-1=0... decrementa o topo}
+NEG {topo recebe 1 - conteudo do topo}
+CME {se topo - 1 for menor que topo, então topo-1 = 1, caso contrario topo-1 = 0 ... decrementa o topo}
+CMA {se topo - 1 for maior que topo, então topo-1 = 1, caso contrario topo-1 = 0 ... decrementa o topo}
+CEQ {se topo - 1 for igual ao topo, então topo-1 = 1, caso contrario topo-1 = 0 ... decrementa o topo}
+CDIF {se topo - 1 for diferente do topo, então topo-1 = 1, caso contrario topo-1 = 0 ... decrementa o topo}
+CMEQ {se topo - 1 for menor ou igual ao topo, então topo-1 = 1, caso contrario topo-1 = 0 ... decrementa o topo}
+CMAQ {se topo - 1 for maior ou igual ao topo, então topo-1 = 1, caso contrario topo-1 = 0 ... decrementa o topo}
+START {inicia o programa, topo recebe -1... s=-1}
+HLT {para a execução da máquina virtual, quando receber esse comando, significa que não tem mais linha de código}
+STR n {armazena valor contido no topo da pilha, na posição n da pilha, decrementa o topo}
+JMP l (label) {vai para o label sempre i=l (i tá pensando em linha, acredito eu)}
+JMPF l (label) {vai pular se for falso, se o topo da pilhar conter 0, pula i=l, se não continua normal i=i+1}
+NULL {faz porra nenhuma =) (fdp)}
+RD {incrementa o topo, e na posição do topo na pilha recebe "proximo valor de entrada"}
+PRT {"Imprimir M[s]", decrementa o topo}
+ALLOC m,n
+{
+	Para k:=0 até n-1 faça
+	{s:=s + 1; M[s]:=M[m+k]}
+}
+DALLOC m,n
+{
+	Para k:=n-1 até 0 faça
+	{M[m+k]:=M[s]; s:=s - 1}
+}
+CALL t {incrementa o topo, joga no topo a linha+1?, e vai para a linha do procedimento t}
+RETURN (retorna do procedimento) {linha recebe o topo da pilha, decrementa o topo da pilha}
+
+/*
+Quantidade de funções com parametros 8
+LDC 	k (inteiro)
+LDV 	n (inteiro)
+STR 	n (inteiro)
+JMP 	l (string)(pula para um label)
+JMPF 	l (string)(pula para um label)
+ALLOC 	m,n (inteiros)
+DALLOC 	m,n (inteiros)
+CALL 	l (string)(chama um procedimento ou função)
+*/
